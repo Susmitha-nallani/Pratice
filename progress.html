@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular progress bar</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;
+            font-family: 'Poppins', sans-serif;
+            
+        }
+        body{
+            background:rgb(211, 30, 30);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center ;
+        }
+        .container{
+            display: flex;
+            background-color: #fff;
+            padding: 50px 0;
+            width: 420px;
+            border-radius: 8px;
+            row-gap: 30px;
+            flex-direction: column;
+            align-items: center;
+        }
+        .circular-progress{
+            position: relative;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background : conic-gradient(#7d2ae8 28deg, #ededed 0deg);
+            display: flex;  
+            align-items: center; 
+            justify-content: center;         
+        }
+        .circular-progress ::before{
+            content: "";
+            position: relative;
+            height: 210px;
+            width: 210px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+        .progess-value{
+         position: relative;
+         font-size: 40px;
+         font-weight:600;
+         color: #7d2ae8;
+        }
+        .text{
+            font-size: 30px;
+            font-weight: 500;
+            color: #606060;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circular-progress" id="progressCircle"></div>
+            <span class="progess-value" id="progressValue">0%</span>
+            <input type="number" id="progressInput" min="0" max="100" placeholder="Enter percentage">
+            <button onclick="updateProgress()">Update</button>
+
+        <span class="text"> Html and Css</span>
+    </div>
+
+    <script>
+        function updateProgress() {
+            const progressInput = document.getElementById('progressInput').value;
+            const progressCircle = document.getElementById('progressCircle');
+            const progressValue = document.getElementById('progressValue');
+
+            if (progressInput >= 0 && progressInput <= 100) {
+                const degrees = (progressInput / 100) * 360;
+                progressCircle.style.background = `conic-gradient(#7d2ae8 ${degrees}deg, #ededed 0deg)`;
+                progressValue.textContent = progressInput + '%';
+            } else {
+                alert('Please enter a value between 0 and 100.');
+            }
+        }
+    </script>
+</body>
+</html>

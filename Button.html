@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">       
+        <title>DropDown Button</title>
+        
+<script>
+        console.log(5 + 6);
+        </script>
+</head>
+<Style>
+        .Drop{
+                background-color:green;
+                color: white;
+                padding: 16px;
+                font-size: 20px;
+        }
+        .Dropdown-context{
+                display: none;
+                background-color: rgb(228, 124, 124); 
+                position: absolute;  
+                min-width: 200px;     
+        }
+        .DDBT:hover .Dropdown-context {
+        display: block;
+}
+</Style>
+<body>
+        <div class="DDBT">
+         <button Class="Drop">DropDown</button>
+                <div class="Dropdown-context">
+                        <option id="Changered" onclick="Colorchangered()">Red</option>
+                        <option id="Changeblue" onclick="Colorchangeblue()">Blue</option>
+                        <option id="Changebrown" onclick="Colorchangebrown()">Brown</option>
+                        <option id="Changeblack" onclick="Colorchangeblack()">Black</option>
+                </div>
+        </div>
+</body>           
+<Script>
+       function Colorchangered()
+       {
+        var Changered=document.getElementById('Changered');
+        document.body.style.backgroundColor=Changered.value;
+       }
+       function Colorchangeblue()
+       {
+        var Changeblue=document.getElementById('Changeblue');
+        document.body.style.backgroundColor=Changeblue.value;
+       }
+       function Colorchangebrown()
+       {
+        var Changebrown=document.getElementById('Changebrown');
+        document.body.style.backgroundColor=Changebrown.value;
+       }
+       function Colorchangeblack()
+       {
+        var Changeblack=document.getElementById('Changeblack');
+        document.body.style.backgroundColor=Changeblack.value;
+       }
+</Script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <canvas id="myCanvas" width="300" height="150" style="border:1px solid grey"></canvas> -->
+    <canvas id="ccs" width="300" height="150" style="border: 1px solid green;"></canvas>
+    
+    <script>  
+    /*const c = document.getElementById("myCanvas");
+    const ctx = c.getContext("2d");
+    ctx.font = "30px Verdana";
+    
+    const gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+    
+    gradient.addColorStop("0" , "magenta");
+    gradient.addColorStop("0.5" , "blue");
+    gradient.addColorStop("1.0" , "pink");
+
+    ctx.strokeStyle = gradient;
+    ctx.strokeText ("Sushmitha" , 10, 50);*/
+
+    
+    const e = document.getElementById("ccs");
+    const ctx = e.getContext("2d");
+    ctx.fillStyle = "red";
+    ctx.fillRect(20,20,200,100);
+    ctx.clearRect(40,40,50,50);
+
+    </script>
+</body>
+</html>

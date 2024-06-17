@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up page</title>
+   <style>
+    body{
+        background-color: rgb(244, 203, 248);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    .container{
+            background-color: #ffff;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 500px;
+        }
+    .header{
+        background-color: rgb(178, 93, 218);
+        padding: 10px 0;
+    }
+    .header h2{
+        color: black;
+        font-size: 26px;
+        text-transform:uppercase;
+        text-align: center;
+    }
+    .form{
+        padding: 40px;
+    }
+    .form-control{
+        margin-bottom: 30px;
+        position:relative;
+    }
+    .form-control label{
+        display:inline-block;
+        margin-bottom: 10px;
+    }
+    .form-control input{
+        width: 100%;
+        font-size: 14px;
+        border: 2px solid rgb(226, 141, 141);
+        border-radius: 10px;
+        padding: 10px;
+        display: block;
+    }
+    .form-control input:focus{
+        outline: 0;
+        border-color: rgb(20, 20, 19);
+    }
+    .form-control.error input{
+        border-color: rgb(222, 85, 85);
+    }
+    .form .btn{
+        background-color:rgb(178, 93, 218);
+        border-radius: 50px;
+        margin: auto;
+        outline: none;
+        display: block;
+        font-size: 16px;
+        padding: 15px;
+        border-color: rgb(30, 30, 197);
+    }
+   </style>
+   <script src="../Javascript Pratice/validationform.js"></script>
+    </head>
+<body>   
+    <div class="container">
+        <div class="header">
+            <h2>SignIn Form</h2>
+        </div>
+            <form class="form">            
+          
+                <div class="form-control">
+                    <label for="fname">First Name:</label>
+                    <input type="text" placeholder="Enter First Name" id="fname" onkeypress="validateInput(event)">           
+                    <div id="fnameError" style="color: red;"></div>
+                </div>
+                <div class="form-control">
+                    <label for="mname">Middle Name:</label>
+                    <input type="text" placeholder="Enter Middle Name" id="mname" onkeypress="validateMiddleName(event)">
+                    <div id="mnameError" style="color: red;"></div> 
+                </div>
+                <div class="form-control">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" placeholder="Enter Last Name" id="lname" oninput="validateLastName()">
+                    <div id="lnameError" style="color: red;"></div>              
+                </div>
+                <div class="form-control">
+                    <label for="email">Email Id:</label>
+                    <input type="text" placeholder="Enter Email Id" id = "email" oninput="validateemail()">
+                    <div id="emailError" style="color: red;"></div> 
+                </div>
+
+                <button type="submit" class="btn">Submit</button>
+            </form>
+    </div>
+        
+</body>
+</html>
